@@ -1,0 +1,13 @@
+{
+    "id": "block-modules",
+    "name": "Block Modules",
+    "description": "Removes the ability for users to enable/disable modules from their profiles.",
+    "keywords": [
+        "block, modules"
+    ],
+    "version": "1.0.0",
+    "humhub": {
+        "minVersion": "1.3"
+    },
+    "screenshots": []
+}
