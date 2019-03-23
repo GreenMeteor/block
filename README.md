@@ -6,7 +6,7 @@
 
 ## Installation
 
-1. Download module files and put it into: /protected/modules/block-profile-changes
+1. Download module files and put it into: /protected/modules/block-modules
 2. Enable module (Administration -> Modules -> Installed)
 
 ## Description
