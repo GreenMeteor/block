@@ -12,7 +12,7 @@ use humhub\modules\user\widgets\AccountMenu;
 
 /** @noinspection MissedFieldInspection */
 return [
-    'id' => 'block-modules',
+    'id' => 'blockmodules',
     'class' => 'humhub\modules\blockmodules\Module',
     'namespace' => 'humhub\modules\blockmodules',
     'events' => [
