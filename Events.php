@@ -22,7 +22,7 @@ class Events
         $controller = $event->sender;
 
         /** @var Module $module */
-        $module = Yii::$app->getModule('block-modules');
+        $module = Yii::$app->getModule('blockmodules');
 
         if (in_array($controller->id . '.' . $event->action->id, $module->forbiddenActions)) {
             $event->isValid = false;
