@@ -6,7 +6,7 @@
  * @license https://www.humhub.com/licences
  */
 
-use humhub\components\Application;
+use humhub\modules\blockmodules\Events;
 use humhub\modules\user\controllers\AccountController;
 use humhub\modules\user\widgets\AccountMenu;
 
@@ -16,8 +16,21 @@ return [
     'class' => 'humhub\modules\blockmodules\Module',
     'namespace' => 'humhub\modules\blockmodules',
     'events' => [
-        [AccountController::class, AccountController::EVENT_BEFORE_ACTION, ['\humhub\modules\blockmodules\Events', 'onControllerAction']],
-        [AccountMenu::class, AccountMenu::EVENT_BEFORE_RUN, ['\humhub\modules\blockmodules\Events', 'onAccountMenu']]
+        [
+            'class' => AccountController::class,
+            'event' => AccountController::EVENT_BEFORE_ACTION,
+            'callback' => [Events::class, 'onControllerAction']
+        ],
+        [
+            'class' => AccountMenu::class,
+            'event' => AccountMenu::EVENT_BEFORE_RUN,
+            'callback' => [Events::class, 'onAccountMenu']
+        ],
+        [
+            'class' => '\humhub\modules\calendar\widgets\CalendarControls',
+            'event' => 'beforeRun',
+            'callback' => [Events::class, 'onCalendarControlsBeforeRun']
+        ],
     ]
 ];
 ?>
